@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Projects } from './services/projects';
+import { Project } from './services/project';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'ngxs-and-drag-n-drop';
+  public progects: Array<Project> = Projects;
+  constructor() { }
 }

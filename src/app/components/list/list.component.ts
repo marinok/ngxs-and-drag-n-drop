@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Project } from './../../services/project';
 
 @Component({
   selector: 'app-list',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.less']
 })
 export class ListComponent implements OnInit {
+  @Input() items: Array<Project>;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.items);
   }
 
 }
