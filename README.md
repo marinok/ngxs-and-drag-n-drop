@@ -6,3 +6,5 @@ Links:
 https://material.angular.io/cdk/drag-drop/overview
 
 https://ngxs.gitbook.io/ngxs
+
+12
