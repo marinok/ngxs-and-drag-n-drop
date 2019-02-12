@@ -7,4 +7,4 @@ https://material.angular.io/cdk/drag-drop/overview
 
 https://ngxs.gitbook.io/ngxs
 
-12
+https://grokonez.com/frontend/angular/angular-6/angular-6-ngxs-example-angular-state-management

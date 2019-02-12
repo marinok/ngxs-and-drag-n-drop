@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Projects } from './services/projects';
 import { Project } from './services/project';
+import { ProjectsService } from './services/projects.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +11,12 @@ import { Project } from './services/project';
 })
 export class AppComponent {
   public progects: Array<Project> = Projects;
-  constructor() { }
+  public projects$: Observable<Project[]>;
+  constructor(public projectsService: ProjectsService) {
+    this.projects$ = projectsService.getProjects();
+    this.projects$.subscribe(items => {
+      console.log(items);
+    });
+    // console.log(this.projects$);
+  }
 }
