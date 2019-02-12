@@ -8,17 +8,17 @@ import { Observable } from 'rxjs';
   styleUrls: ['./list.component.less']
 })
 export class ListComponent implements OnInit {
-  @Input() items: Observable<Project[]>;
+  @Input() items ?: Observable<Project[]>;
   public items$: Array<Project>;
   constructor() {
   }
 
   ngOnInit() {
 
-    this.items.subscribe(items => {
+    /* this.items.subscribe(items => {
       console.log(items);
       this.items$ = items;
-    });
+    }); */
   }
 
 }

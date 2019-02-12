@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { Projects } from './services/projects';
+import { Component, OnInit } from '@angular/core';
+import { Store, Select } from '@ngxs/store';
+
 import { Project } from './services/project';
-import { ProjectsService } from './services/projects.service';
+import { ProjectsState } from './services/projects.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -9,14 +10,12 @@ import { Observable } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
-  public progects: Array<Project> = Projects;
-  public projects$: Observable<Project[]>;
-  constructor(public projectsService: ProjectsService) {
-    this.projects$ = projectsService.getProjects();
-    this.projects$.subscribe(items => {
-      console.log(items);
-    });
-    // console.log(this.projects$);
+export class AppComponent implements OnInit {
+  @Select(ProjectsState.getProjects) projects: Observable<Project[]>;
+
+  constructor(private store: Store) {
+  }
+
+  ngOnInit() {
   }
 }
