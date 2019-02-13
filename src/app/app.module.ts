@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxsModule } from '@ngxs/store';
-import {ProjectsState} from './services/projects.service'
+import {ProjectsService} from './services/projects.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +17,7 @@ import { ListItemComponent } from './components/list-item/list-item.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxsModule.forRoot([ProjectsState])
+    NgxsModule.forRoot([ProjectsService])
   ],
   providers: [],
   bootstrap: [AppComponent]

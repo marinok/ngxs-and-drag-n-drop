@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Project } from './../../services/project';
+import { Project } from '../../models/project';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -8,13 +8,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./list.component.less']
 })
 export class ListComponent implements OnInit {
-  @Input() items ?: Observable<Project[]>;
-  public items$: Array<Project>;
+  @Input() items: Observable<Project[]>;
   constructor() {
   }
 
   ngOnInit() {
-
     /* this.items.subscribe(items => {
       console.log(items);
       this.items$ = items;

@@ -1,6 +1,5 @@
-import { Store, State, Selector, Select } from '@ngxs/store';
-import { Project } from './project';
-import { Observable } from 'rxjs';
+import { State, Selector } from '@ngxs/store';
+import { Project } from '../models/project';
 
 export class ProjectStateModel {
   readonly projects: Project[];
@@ -16,7 +15,7 @@ export class ProjectStateModel {
   }
 })
 
-export class ProjectsState {
+export class ProjectsService {
   @Selector()
   static getProjects(state: ProjectStateModel) {
     return state.projects;
