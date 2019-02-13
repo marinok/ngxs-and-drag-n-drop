@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgxsModule } from '@ngxs/store';
-import {ProjectsService} from './services/projects.service'
+import { ProjectsService } from './services/projects.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,8 @@ import { ListItemComponent } from './components/list-item/list-item.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxsModule.forRoot([ProjectsService])
+    NgxsModule.forRoot([ProjectsService]),
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
